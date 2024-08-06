@@ -14,4 +14,8 @@ Artisan::command('migrate:fresh-test', function () {
     Artisan::call('migrate:fresh');
 
     $this->comment("Success");
-});
+})->purpose('Runing migrate:fresh for database test');
+
+Artisan::command('tailwind:start', function () {
+    system("npx tailwind -i ./resources/css/app.css -o ./public/tailwind/style.css --watch");
+})->purpose('Runing tailwind');
